@@ -1,11 +1,11 @@
-var Name = ["H", "K", "T", "N", "O"];
+// var Name = ["H", "K", "T", "N", "O"];
 
-console.log("Phần tử trong mảng name: ", Name);
+// console.log("Phần tử trong mảng name: ", Name);
 
-Name[4] = "M";
+// Name[4] = "M";
 
-let a = 100;
-a = 20;
+// let a = 100;
+// a = 20;
 // console.log("Sô a có giá trị là: ", a);
 
 // let n = Number(prompt("Nhập một nguyên dương: "));
@@ -19,7 +19,42 @@ a = 20;
 // }
 
 
-const phone = [1, 2, 3, 4, 5];
-phone.push(6);
-phone.splice(2,0, '9');
-console.log("Phần tử của ", phone, "là:");
+// const phone = [1, 2, 3, 4, 5];
+// phone.push(6);
+// phone.splice(2,0, '9');
+// console.log("Phần tử của ", phone, "là:");
+
+var chuoikitu = prompt("Nhập chuỗi kí tự bạn muốn nhập vào: ");
+var kitunhap = demSoKyTuKhongKhoangTrang(chuoikitu);
+
+function demSoKyTuKhongKhoangTrang(chuoikitu) {
+    let soKyTu = 0;
+    for (let i = 0; i < chuoikitu.length; i++) {
+        if (chuoikitu[i] !== ' ') {
+            soKyTu++;
+        }
+    }
+    return soKyTu;
+}
+console.log("Số ký tự trong chuỗi (không tính khoảng trắng) là: ", kitunhap);
+
+
+// const arr = [1,2,3,4,5,6,7,8,9,10]
+// const res = arr1.map(num => num*2)
+// console.log("arr sau khi double: ", res);
+
+// Đảo ngược theo chữ cái đầu , số đầu: sort
+// const arr1 = [1, 3 ,4 ,41, 12]
+// arr1.sort()
+// console.log("arr1 sau khi sort: ", arr1);
+
+
+
+
+
+
+
+
+
+
+
