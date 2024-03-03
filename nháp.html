@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,57 @@
 </head>
 <body>
     <script src="/nhap.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chúc mừng sinh nhật!</title>
+    <style>
+        @keyframes fireworks {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-100px) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(1);
+            }
+        }
+
+        .chucmung {
+            font-size: 24px;
+            color: #ff69b4;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .firework {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #f00;
+            border-radius: 50%;
+            animation: fireworks 1s ease-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="chucmung" class="chucmung">Chúc mừng sinh nhật!</div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+    <script>
+        // JavaScript không cần thay đổi
+    </script>
 </body>
 </html>
