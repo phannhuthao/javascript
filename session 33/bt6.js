@@ -59,10 +59,7 @@ function searchJobById() {
 
     if (foundJob) {
         console.log("Công việc được tìm thấy:");
-        console.log("Id: ", foundJob.id);
         console.log("Tiêu đề: ", foundJob.title);
-        console.log("Mô tả công việc: ", foundJob.description);
-        console.log("Trạng thái hoàn thành công việc: ", foundJob.completed);
     } else {
         console.log("Không tìm thấy công việc có ID là", searchId);
     }
