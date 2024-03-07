@@ -1,25 +1,3 @@
-// const jobs = {
-//         id: "01",
-//         title: "Lập trình game",
-//         description: "tạo ra các trò chơi cho người tiêu dùng sử dụng",
-//         completed: "Đã hoàn thành",   
-// }
-// console.log("Danh sách công việc ban đầu: ");
-// console.log("Id: ",jobs.laptrinh.id);
-// console.log("Tiêu đề:  ",jobs.laptrinh.title);
-// console.log("Mô tả công việc: ",jobs.laptrinh.description);
-// console.log("Trạng thái hoàn thành công việc: ",jobs.laptrinh.completed);
-
-
-// const id = prompt("Nhập ID công việc mới: ",);
-// const title = prompt("Nhập tiêu đề công việc mới: ");
-// const description = prompt("Nhập mô tả công việc mới: ");
-// const completed = prompt("Nhập trạng thái hoàn thành công việc mới: ");
-
-// for (let key in jobs) {
-//     console.log("")
-// }
-
 const jobs = [];
 
 function Job(id, title, description, completed) {
@@ -29,7 +7,7 @@ function Job(id, title, description, completed) {
     this.completed = completed;
 }
 
-// Lựa chọn 1: Thêm mới công việc vào mảng
+
 function addJob() {
     const id = prompt("Nhập ID công việc mới: ");
     const title = prompt("Nhập tiêu đề công việc mới: ");
@@ -40,7 +18,7 @@ function addJob() {
     jobs.push(newJob);
 }
 
-// Lựa chọn 2: In ra danh sách công việc
+
 function printJobs() {
     console.log("Danh sách công việc:");
     jobs.forEach(job => {
@@ -52,7 +30,7 @@ function printJobs() {
     });
 }
 
-// Lựa chọn 3: Tìm kiếm công việc theo id
+
 function searchJobById() {
     const searchId = prompt("Nhập ID công việc cần tìm: ");
     const foundJob = jobs.find(job => job.id === searchId);
@@ -89,5 +67,7 @@ do {
             console.log("Lựa chọn không hợp lệ.");
     }
 } while (choice !== '4');
+
+
 
 
