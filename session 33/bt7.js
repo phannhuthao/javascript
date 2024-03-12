@@ -30,7 +30,7 @@ function hienThiHoaDon() {
 function tinhTongGiaTri() {
     let tong = 0;
     danhSachHoaDon.forEach(hoadon => {
-        tong += parseFloat(hoadon.tonggiatri);
+        tong += parseFloat(hoadon.tonggiatri);   //  Trong mỗi lần lặp, giá trị của thuộc tính tonggiatri của hóa đơn (hoadon) được chuyển đổi thành một số dấu phẩy động bằng cách sử dụng hàm parseFloat(). Giá trị này sau đó được cộng vào biến tong.
     });
     return tong;
 }
@@ -61,5 +61,4 @@ function main() {
         }
     } while (choice !== '4');
 }
-
-// main();
+main();

@@ -1,76 +1,6 @@
-// var Name = ["H", "K", "T", "N", "O"];
-
-// console.log("Phần tử trong mảng name: ", Name);
-
-// Name[4] = "M";
-
-// let a = 100;
-// a = 20;
-// console.log("Sô a có giá trị là: ", a);
-
-// let n = Number(prompt("Nhập một nguyên dương: "));
-// let sum = 0;
-
-// for (let i = 0; i < n; i++) {
-//     if ( n > 0 ) {
-//         n = n + 1;
-//     }
-//     console.log(n);
-// }
-
-
-// const phone = [1, 2, 3, 4, 5];
-// phone.push(6);
-// phone.splice(2,0, '9');
-// console.log("Phần tử của ", phone, "là:");
-
-// var chuoikitu = prompt("Nhập chuỗi kí tự bạn muốn nhập vào: ");
-// var kitunhap = demSoKyTuKhongKhoangTrang(chuoikitu);
-
-// function demSoKyTuKhongKhoangTrang(chuoikitu) {
-//     let soKyTu = 0;
-//     for (let i = 0; i < chuoikitu.length; i++) {
-//         if (chuoikitu[i] !== ' ') {
-//             soKyTu++;
-//         }
-//     }
-//     return soKyTu;
-// }
-// console.log("Số ký tự trong chuỗi (không tính khoảng trắng) là: ", kitunhap);
-
-
-// const arr = [1,2,3,4,5,6,7,8,9,10]
-// const res = arr1.map(num => num*2)
-// console.log("arr sau khi double: ", res);
-
-// Đảo ngược theo chữ cái đầu , số đầu: sort
-// const arr1 = [1, 3 ,4 ,41, 12]
-// arr1.sort()
-// console.log("arr1 sau khi sort: ", arr1);
-
-
-// const lop = {};
-// const thanhvien = "Dat";
-// const thanhvien2 = "An";
-
-// Object.assign(lop, thanhvien, thanhvien2);
-// console.log(lop);
-
-// const person =  {
-//     firstName: "Duc", 
-//     lastName: "Duy",
-//     set fullname(name) {
-//         const part = name.split(" ");
-//         this.firstName = part[0];
-//         this.lastName = part[1];
-//     } 
-// };
-// person.fullname = "Duc Duy";
-// console.log(person.fullname);
-
 const Product = [];
-const employee = [];
-const invoices = [];
+const Employee = [];
+const Invoices = [];
 
 function product(id, name, price, expiryDate) {
     this.id = id;
@@ -106,7 +36,7 @@ function addEmployee() {
     const age = prompt("Nhập tuổi nhân viên: ");
 
     const newemployee = new employee(id, name, age);
-    employee.push(newemployee);
+    Employee.push(newemployee);
 }
 
 function addInvoice() {
@@ -122,9 +52,8 @@ function addInvoice() {
             console.log(`Không tìm thấy sản phẩm có id ${productId}`);
         }
     }
-
     const newinvoice = new invoice(products, quantity);
-    invoices.push(newinvoice);
+    Invoices.push(newinvoice);
 }
 
 function printProduct() {
@@ -136,13 +65,21 @@ function printProduct() {
     })
 }
 
+function printEmployee() {
+    console.log("Danh sách nhân viên: ");
+    Employee.forEach(employee => {
+        console.log("id: ",employee.id);
+        console.log("name: ",employee.name);
+        console.log("age: ",employee.age);
+    })
+}
 
 function printOverview() {
     console.log("Thông tin tổng quan cửa hàng:");
     console.log(`Số lượng sản phẩm: ${Product.length}`);
-    console.log(`Số lượng nhân viên: ${employee.length}`);
+    console.log(`Số lượng nhân viên: ${Employee.length}`);
 
-    const totalRevenue = invoices.reduce((acc, invoice) => {
+    const totalRevenue = Invoices.reduce((acc, invoice) => {
         const invoiceTotal = invoice.products.reduce((total, product) => total + parseInt(product.price), 0);
         return acc + invoiceTotal;
     }, 0);
@@ -195,24 +132,10 @@ do {
         case '7':
             checkExpiry();
             break;
-        default:
+        case '8':
+            console.log("Chương trình kết thúc.");
             break;
+        default:
+            console.log("Lựa chọn không hợp lệ.");
     }
 } while (choice !== '8');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
