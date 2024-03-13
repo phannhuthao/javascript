@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #myInput {
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h1>Mặc định nền của ô input sẽ có màu vàng, khi có nội dung trong ô input thì nền chuyển thành màu trắng. Sau khi
+        ấn nút add thì thêm phần tử vào danh sách phía dưới và xóa hết nội dung trong ô input.</h1>
+
+    <input type="text" id="myInput" oninput="changeBackground()" placeholder="Nhập vào đây">
+    <button onclick="addItem()">Add</button>
+    <ul id="myList"></ul>
+
+    <script src="/javascript/session 36,37/bt5.js"></script>
+</body>
+</html>

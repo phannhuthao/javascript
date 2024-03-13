@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <h1>Xây dựng giao diện như hình bên dưới phép thực hiện phép tính cộng, trừ, nhân, chia giữa 2 số được người dùng chọn từ giao diện.</h1>
+
+  
+<div class="container">
+    <h2>Calculator</h2>
+    <select id="operator">
+        <option value="Cộng">Phép cộng (+)</option>
+        <option value="Trừ">Phép trừ (-)</option>
+        <option value="Nhân">Phép nhân (*)</option>
+        <option value="Chia">Phép chia (/)</option>
+    </select>
+    <p></p>
+    <br><input type="number" id="num1" placeholder="Nhập số 1">
+    <p></p>
+    <br><input type="number" id="num2" placeholder="Nhập số 2">
+    <p></p>
+    <br><button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+</div>
+<script>
+    function calculate() {
+        var operator = document.getElementById("operator").value;
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var result;
+        switch (operator) {
+            case "Cộng":
+                result = num1 + num2;
+                break;
+            case "Trừ":
+                result = num1 - num2;
+                break;
+            case "Nhân":
+                result = num1 * num2;
+                break;
+            case "Chia":
+                result = num1 / num2;
+                break;
+            default:
+                result = "Invalid operator";
+        }
+        document.getElementById("result").innerText = "Result: " + result;
+    }
+</script>
+</body>
+</html>

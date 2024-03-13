@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(itemValue) {
             var list = document.getElementById('itemList');
             var listItem = document.createElement('li');
-            listItem.textContent = itemValue;
+            listItem.textContent = itemValue; // trả về chuỗi kí tự văn bản
             list.appendChild(listItem);
             document.getElementById('itemInput').value = ''; // Clear input field
         }
