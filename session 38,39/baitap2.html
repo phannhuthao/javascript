@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Phan Nhựt Hào (Ohayo)</title>
+
+<style>
+#search-container {
+    width: 150px;
+    display: flex;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#search {
+    width: 0px; 
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px;
+    transition: width 0.5s ease; 
+    font-size: 15x;
+}
+
+.search-expanded #search {
+    width: 100px
+}
+
+.fa {
+    color:blueviolet;
+}
+</style>
+
+</head>
+<body>
+    <h1>Xây dựng giao diện bắt đầu bằng 1 icon search
+
+        Khi ấn lần nữa thì nội dung lại quay icon search ban đầu
+        
+        Yêu cầu transition giữa việc mở rộng và thu gọn cần phải mượt mà</h1>
+
+        <p>Thanh tìm kiếm: </p>
+
+        <div id="search-container" class="timkiem">
+            <button id="search-icon" class="fa fa-search" class="fa-fa-times"></button>
+            <input type="text" id="search" placeholder="search by...">
+        </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const searchContainer = document.getElementById("search-container");
+    const searchIcon = document.getElementById("search-icon");
+
+searchIcon.addEventListener("click", function() {
+        searchContainer.classList.toggle("search-expanded");
+        searchContainer.classList.toggle("timkiem");
+        searchIcon.classList.toggle("fa-search");
+        searchIcon.classList.toggle("fa-times");
+    });
+});
+    </script>
+</body>
+</html>
