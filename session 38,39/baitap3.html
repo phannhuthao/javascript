@@ -6,21 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    animation: fadeOut 2s forwards 2s; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+</style>
 
 <body>
-    <h1>Xây dựng chương trình bao gồm 1 image có width và height bao phủ toàn bộ màn hình trình duyệt và một số 0% nằm
-        chính giữa màn hình.
 
-        Mỗi khi load trình duyệt, bức ảnh bị mờ nhạt và sẽ rõ dần lên hoàn toàn kèm theo 0% sẽ tăng dần lên 100% và biến
-        mất. Thời gian mờ → rõ và 0% - 100% tuỳ biến (có thể để từ 1 - 2s)</h1>
-
-        <div>
-            <img src="/" alt="">
-        </div>
-
-
-
-
+    
+    <div class="overlay"></div>
+    <div class="container">
+        <img src="/javascript/session 38,39/z5214005929884_5e573bddf42bd3cf3cadbafb80b0ab39.jpg" alt="image0">
+    </div>
 
     <script src="/javascript/session 38,39/bt3.js"></script>
 </body>
