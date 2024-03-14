@@ -42,4 +42,4 @@ poundInput.value = gramsValue * 0.00220462;
 ouncesInput.value = gramsValue * 0.035274;
 stonesInput.value = gramsValue * 0.000157473;
 killogramInput.value = gramsValue / 1000;
-        });
+});
