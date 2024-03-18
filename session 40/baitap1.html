@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sử dụng browser storage. Viết chương trình khai báo đối tượng thông tin cá nhân có các thuộc tính họ tên, tuổi
+        email. Yêu cầu người dùng nhập thông tin và lưu đối tượng vào local storage. Mỗi khi vào web thì in đối tượng ra
+        màn hình.</h1>
+
+
+        <h1>Personal Information</h1>
+<form id="infoForm">
+    <label for="fullName">Full Name:</label><br>
+    <input type="text" id="fullName" name="fullName"><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <button type="submit">Save</button>
+</form>
+
+<div id="displayInfo"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Kiểm tra xem local storage đã có thông tin cá nhân hay chưa
+    if(localStorage.getItem('personalInfo')) {
+        displayPersonalInfo();
+    }
+
+    // Bắt sự kiện khi submit form
+    document.getElementById('infoForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn việc submit form
+
+        // Lấy giá trị từ form
+        var fullName = document.getElementById('fullName').value;
+        var age = document.getElementById('age').value;
+        var email = document.getElementById('email').value;
+
+        // Tạo đối tượng thông tin cá nhân
+        var personalInfo = {
+            fullName: fullName,
+            age: age,
+            email: email
+        };
+
+        // Lưu đối tượng vào local storage
+        localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
+
+        // Hiển thị thông tin đã lưu
+        displayPersonalInfo();
+    });
+
+    // Hàm hiển thị thông tin cá nhân
+    function displayPersonalInfo() {
+        var info = JSON.parse(localStorage.getItem('personalInfo'));
+        var displayDiv = document.getElementById('displayInfo');
+        displayDiv.innerHTML = "<h2>Personal Information:</h2>" +
+                               "<p><strong>Full Name:</strong> " + info.fullName + "</p>" +
+                               "<p><strong>Age:</strong> " + info.age + "</p>" +
+                               "<p><strong>Email:</strong> " + info.email + "</p>";
+    }
+});
+</script>
+
+    <script src="/javascript/session 40/bt1.js"></script>
+</body>
+
+</html>

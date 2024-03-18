@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Xây dựng chương trình có giao diện
+
+
+        Thêm tên người dùng vào local storage với key là userName. Sau khi thêm, dữ liệu sẽ được lưu trong local storage, hiện tên người dùng bên dưới và nút thêm sẽ biến mất
+        
+        
+        Bất kỳ thời điểm nào trong localStorage có tồn tại tên người dùng thì giao diện sẽ như hình bên dưới, nếu không thì giao diện như hình phía trên. Khi ấn nút xóa thì xóa tên người dùng khỏi localStorage.</h1>
+
+        <input type="text" id="username" placeholder="Nhập tên người dùng">
+    <button id="addButton" onclick="addUser()">Thêm</button>
+    <button onclick="deleteUser()">Xóa</button>
+    <div id="users"></div>
+
+    <script>
+        function addUser() {
+            let username = document.getElementById('username').value;
+            if (username) {
+                localStorage.setItem('userName', username);
+                document.getElementById('addButton').style.display = 'none';
+                displayUsers();
+            }
+        }
+
+        function deleteUser() {
+            localStorage.removeItem('userName');
+            document.getElementById('addButton').style.display = 'block';
+            displayUsers();
+        }
+
+        function displayUsers() {
+            let usersDiv = document.getElementById('users');
+            let username = localStorage.getItem('userName');
+            usersDiv.innerHTML = username ? `Người dùng tên: ${username}` : '';
+        }
+
+        window.onload = function() {
+            displayUsers();
+            document.getElementById('addButton').style.display = localStorage.getItem('userName') ? 'none' : 'block';
+        };
+    </script>
+</body>
+</html>

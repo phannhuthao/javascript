@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tạo form đăng ký người dùng, lưu thông tin người đăng ký vào local storage dưới dạng mảng các người dùng.</h1>
+
+    <input type="text" id="username" placeholder="Nhập tên người dùng">
+    <input type="email" id="email" placeholder="Nhập email">
+    <input type="password" id="password" placeholder="Nhập mật khẩu">
+    <button onclick="registerUser()">Đăng ký</button>
+    <div id="users"></div>
+
+    <script>
+        function registerUser() {
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').vakue;
+            let password = document.getElementById('password').value;
+            if (username && password) {
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                users.push({username, email, password});
+                localStorage.setItem('users', JSON.stringify(users));
+                displayUsers();
+            }
+        }
+
+        function displayUsers() {
+            let usersDiv = document.getElementById('users');
+            usersDiv.innerHTML = '';
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            for (let i = 0; i < users.length; i++) {
+                usersDiv.innerHTML += `<p>${users[i].username}</p>`;
+            }
+        }
+
+        window.onload = displayUsers;
+    </script>
+    
+</body>
+</html>
